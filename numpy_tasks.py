@@ -62,11 +62,12 @@ def draw_rectangle(data: RectangleInput) -> np.ndarray:
     image_height, image_width = data.image_height, data.image_width
     shape_color, background_color = data.shape_color, data.background_color
     image = np.full((image_height, image_width, 3), background_color)
-    y0, x0 = image_height // 2, image_width // 2
+    y0 = image_height // 2
+    x0 = image_width // 2
     y_start = y0 - height // 2
     x_start = x0 - width // 2
-    y_end = y_start + height // 2
-    x_end = x_start + width // 2
+    y_end = y_start + height
+    x_end = x_start + width
     image[y_start:y_end, x_start:x_end] = shape_color
     return image
 
