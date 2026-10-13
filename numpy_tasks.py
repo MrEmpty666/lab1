@@ -65,8 +65,8 @@ def draw_rectangle(data: RectangleInput) -> np.ndarray:
     y0, x0 = image_height // 2, image_width // 2
     y_start = y0 - height // 2
     x_start = x0 - width // 2
-    y_end = y0 + height // 2
-    x_end = x0 + width // 2
+    y_end = y_start + height // 2
+    x_end = x_start + width // 2
     image[y_start:y_end, x_start:x_end] = shape_color
     return image
 

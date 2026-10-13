@@ -72,8 +72,7 @@ def pyramid(data: PositiveIntegerInput) -> int | str:
 def is_balanced_number(data: PositiveIntegerInput) -> bool:
     number = data.value
     middle_n = len(str(number)) // 2
-    num_first = sum(map(int, str(number)[:middle_n]))
-    if middle_n % 2 != 0: middle_n += 1
-    num_second = sum(map(int, str(number)[middle_n:]))
-    if num_first == num_second: return True
-    return False
+    num_second = sum(map(int, str(number)[middle_n + 1:]))
+    if len(str(number)) % 2 == 0: middle_n -= 1
+    num_first = sum(map(int, str(number)[:middle_n:]))
+    return num_first == num_second
